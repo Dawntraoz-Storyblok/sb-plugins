@@ -1,4 +1,4 @@
-# Storyblok Vue 3 Field Plugin
+# Storyblok Vue 3 Field Plugin: `ai-tags`
 
 This project was created using Vue 3 and Typescript. It consists of a set of base functionalities, such as value updating, modal toggling and asset selection. This starter is intended to help developers when creating their own Storyblok Field Plugin.
 
