@@ -24,6 +24,8 @@ const plugin = useFieldPlugin({
     }
   */
 })
+
+console.log('# Demo 1 - FieldPluginResponse: ', plugin)
 </script>
 
 <template>

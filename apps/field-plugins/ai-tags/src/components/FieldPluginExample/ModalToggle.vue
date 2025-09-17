@@ -9,7 +9,7 @@ const props = defineProps<{
 
 <template>
   <div>
-    <h2>Modal</h2>
+    <h2># Demo 6 - Advance interactions: Modal</h2>
     <button
       class="btn w-full"
       type="button"

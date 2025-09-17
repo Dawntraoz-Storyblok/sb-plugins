@@ -17,12 +17,12 @@ const removeAsset = () => {
 
 <template>
   <div class="asset-selector">
-    <h2>Asset Selector</h2>
+    <h2># Demo 6 - Advance interactions: Asset Selector</h2>
     <img
       v-if="asset"
       :src="asset.filename"
       title="Selected Asset"
-    >
+    />
     <button
       v-if="asset"
       class="btn w-full"

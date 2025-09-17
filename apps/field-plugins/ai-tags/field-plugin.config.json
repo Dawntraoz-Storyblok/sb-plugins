@@ -1,3 +1,8 @@
 {
-  "options": []
+  "options": [
+    {
+      "name": "brand",
+      "value": ""
+    }
+  ]
 }

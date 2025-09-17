@@ -2,7 +2,9 @@
 import './example.css'
 import ModalToggle from './ModalToggle.vue'
 import Counter from './Counter.vue'
+import FieldOptions from './FieldOptions.vue'
 import AssetSelector from './AssetSelector.vue'
+import PromptAI from './PromptAI.vue'
 import { useFieldPlugin } from '@storyblok/field-plugin/vue3'
 
 const plugin = useFieldPlugin({
@@ -41,12 +43,19 @@ const plugin = useFieldPlugin({
         @on-increase="plugin.actions.setContent(plugin.data.content + 1)"
       />
       <hr />
+      <FieldOptions :options="plugin.data.options" />
+      <hr />
       <ModalToggle
         :is-modal-open="plugin.data.isModalOpen"
         :set-modal-open="plugin.actions.setModalOpen"
       />
       <hr />
       <AssetSelector :select-asset="plugin.actions.selectAsset" />
+      <hr />
+      <PromptAI
+        :is-a-i-enabled="plugin.data.isAIEnabled"
+        :prompt-a-i="plugin.actions.promptAI"
+      />
     </div>
   </div>
 </template>
