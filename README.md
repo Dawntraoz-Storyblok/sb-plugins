@@ -77,7 +77,7 @@ pnpm --filter ai-content-checker build
 
    Show the initial setup using [`useFieldPlugin`](/apps/field-plugins/ai-tags/src/components/FieldPlugin.vue).
 
-   Demonstrate reading content from [`plugin.data.content`](/apps/field-plugins/ai-tags/src/components/FieldPlugin.vue) and updating content using [`plugin.actions.setContent(content + 1)`](/apps/field-plugins/ai-tags/src/components/FieldPlugin.vue) with a button click.
+   Demonstrate reading content from [`plugin.data.content`](/apps/field-plugins/ai-tags/src/components/FieldPluginExample/Counter.vue) and updating content using [`plugin.actions.setContent(content + 1)`](/apps/field-plugins/ai-tags/src/components/FieldPluginExample/Counter.vue) with a button click.
 
    > Explain the importance of `actions.setContent` for the Visual Editor to acknowledge changes, contrasting it with direct `plugin.data.content` modification.
 
@@ -89,11 +89,11 @@ pnpm --filter ai-content-checker build
 
 6. Advanced interactions
 
-   **Modal window**: Implement a button that calls `plugin.actions.setModalOpen(true)` and conditionally renders content based on `plugin.data.isModalOpen`.
+   **[Modal window](/apps/field-plugins/ai-tags/src/components/FieldPluginExample/ModalToggle.vue)**: Implement a button that calls `plugin.actions.setModalOpen(true)` and conditionally renders content based on `plugin.data.isModalOpen`.
 
-   **Asset Selector**: Show how to call `plugin.actions.selectAsset().then(...)` to open the asset manager and handle the selected asset.
+   **[Asset Selector](/apps/field-plugins/ai-tags/src/components/FieldPluginExample/AssetSelector.vue)**: Show how to call `plugin.actions.selectAsset().then(...)` to open the asset manager and handle the selected asset.
 
-   **AI Prompt** (if time allows): Demonstrate a call to `plugin.actions.promptAI()` with an example action: _'prompt'_ and text to generate content.
+   **[AI Prompt](/apps/field-plugins/ai-tags/src/components/FieldPluginExample/PromptAI.vue)** (if time allows): Demonstrate a call to `plugin.actions.promptAI()` with an example action: _'prompt'_ and text to generate content.
 
 7. Deployment walkthrough
 
@@ -102,3 +102,21 @@ pnpm --filter ai-content-checker build
    Illustrate `npx @storyblok/field-plugin-cli@latest deploy` from `cd apps/field-plugins/ai-tags`, inputting a Personal Access Token, and choosing a scope (e.g., "My plugins").
 
    Show in Visual Editor: Navigate to a Storyblok space, add a custom field type, select the deployed plugin, and demonstrate its functionality directly within the Visual Editor.
+
+### Space plugin showcase
+
+1. Authentication: App Bridge + OAuth workflow
+
+   Show the code from one starter template:
+
+   - Highlight the initial `postMessage` with `action: "app-changed", event: "validate"` (Showcase [Nuxt base layer](https://github.com/storyblok/space-tool-plugins/tree/main/space-plugins/nuxt-base)).
+   - Show the setup of an API route for token validation using `jwt.verify` on the backend.
+   - Briefly touch on OAuth concepts: `client_id`, `redirect_uri`, `scope`, and obtaining `access_token` for Management API calls.
+
+2. Management API interaction
+
+   Show an example of using a `StoryblokClient` with the obtained `oauthToken` and `spaceId` to fetch stories or perform other operations via the Management API.
+
+3. Registration process
+
+   Show how to register a _"New Extension"_ in the Partner Portal or Organization, selecting _"Sidebar"_ as the Extension Type. Explain the settings and getting the _"Install Link"_ for users to install the app in their spaces.
